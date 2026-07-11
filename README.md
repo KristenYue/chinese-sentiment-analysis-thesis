@@ -24,6 +24,18 @@
 - Macro-F1: 0.8856
 - 新向量器不再依赖`__main__.jieba_tokenizer`兼容层
 
+## 与舆情 Agent 项目的指标关系
+
+本仓库是本科毕设资产的可运行恢复版；简历中的 Agent、可靠性评估和 RoBERTa 实验位于后续项目 [`public-opinion-agent-eval`](https://github.com/KristenYue/public-opinion-agent-eval)。三个常见数字来自不同实验，不能直接横向比较：
+
+| 结果 | 数据与模型口径 | 用途 |
+| --- | --- | --- |
+| XGBoost Accuracy 90.9% | 原毕设 143 条随机测试集，重训后的 TF-IDF + XGBoost | 复现本科毕设主链路 |
+| XGBoost Accuracy 44.7% | 后续 Agent 项目的 38 条事件级测试集，同事件隔离且包含高风险标签复核 | 暴露跨事件泛化问题，作为 Agent 复核动机 |
+| RoBERTa Accuracy 83.9%、Negative Recall 60.7% | 后续项目公开的 legacy/provisional split，balanced class weighting | 候选模型实验，不宣称为最终金标或生产效果 |
+
+后两组结果的文件证据、训练入口和限制说明见后续项目的 [`docs/AGENT_EVALUATION.md`](https://github.com/KristenYue/public-opinion-agent-eval/blob/main/docs/AGENT_EVALUATION.md)。
+
 ## 目录说明
 
 - `artifacts/`: 已验证的三分类模型、TF-IDF向量器和标签编码器
