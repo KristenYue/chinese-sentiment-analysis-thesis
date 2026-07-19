@@ -123,3 +123,5 @@ $env:PYTHONPATH="src"
 $env:PYTHONPATH="src"
 .\.venv\Scripts\python.exe -m pytest
 ```
+
+仓库配置了 GitHub Actions。推送或提交 Pull Request 后，会在 Python 3.10 和 3.12 环境中自动安装依赖并运行测试，覆盖模型资产兼容性、预测概率和文本预处理逻辑。
